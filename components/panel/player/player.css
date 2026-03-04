@@ -1,0 +1,330 @@
+@layer component {
+    :host {
+        position: absolute;
+        display: block;
+        inset: 0;
+        color: #ffffff;
+        background-color: #808080;
+    }
+    button {
+        padding: 0;
+        font-family: inherit;
+        color: inherit;
+        background-color: transparent;
+    }
+    .root {
+        position: relative;
+        height: 100%;
+    }
+    .body {
+        position: absolute;
+        inset: 0;
+        overflow-y: auto;
+    }
+    main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .backg {
+        height: 100%;
+        overflow: hidden;
+    }
+    .backg-img {
+        height: 100%;
+        background-size: 100% 100%;
+        opacity: 0.95;
+        -webkit-filter: blur(80px);
+        filter: blur(80px);
+        transform: scale(1.25,1.25);
+    }
+    section {overflow: hidden;}
+
+
+    footer, .infor > div, .mode, .mode > div {display: flex;}
+    footer {justify-content: space-between;}
+
+    h2, p {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .cover {position: relative;}
+    .cover > div {
+        overflow: hidden;
+        text-align: center;
+        box-shadow: 0px 0px 15px rgba(40,40,40,0.7);
+    }
+    .cover > div, .cover-img {
+        width: 100%;
+        line-height: 1em;
+        border-radius: 1.5%;
+        -webkit-aspect-ratio: 1 / 1;
+        aspect-ratio: 1 / 1;
+    }
+    section + div {
+        display: flex;
+        align-items: center;
+    }
+    .down {
+        color: #ffffff;
+        text-decoration-line: none;
+        border-color: #ffffff;
+    }
+    .mv, .down {
+        line-height: 1.8em;
+        font-weight: bold;
+        border-width: 0.005em;
+        border-style: solid;
+    }
+    .mv.stop {
+        color: rgb(184, 184, 184);
+        border-color: rgb(184, 184, 184);
+    }
+    .mode > div > button, .controls > button {
+        flex: none;
+        -webkit-aspect-ratio: 1 / 1;
+        aspect-ratio: 1 / 1;
+    }
+    .progress {
+        display: flex;
+        justify-content: space-between;
+    }
+    progress {
+        box-sizing: border-box;
+        display: block;
+        overflow: hidden;
+        color: #ffffff;
+        background-color: #B8B8B8;
+    }
+    .current-time, .end-time {
+        line-height: 1em;
+        text-shadow: 0px 1px 1px #4A4A4A;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    .controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    @media all and (orientation: landscape) {
+        header, .cover, .infor, .blank, .footer {display: flex;}
+        header {flex: auto;}
+        footer {
+            padding: 0.3em;
+            flex: none;
+            height: var(--landscape-footer-height);
+            background-color: #75514A;
+        }
+        .cover, .infor {
+            flex-basis: 50%;
+            align-items: center;
+            justify-content: center;
+        }
+        .cover > div {flex-basis: 50%;}
+        .infor > div {
+            flex: auto;
+            justify-content: center;
+        }
+        h2 {
+            font-size: 15pt;
+            line-height: 1.8em;
+            text-shadow: 0px 1px 2px #1E1E1E;
+        }
+        p {
+            font-size: 12pt;
+            line-height: 1.8em;
+            color: #e5e5e5;
+            text-shadow: 0px 0.5px 2px #555555;
+        }
+        section + div {margin-left: 1em;}
+        .mv, .down {
+            margin-left: 1em;
+            padding: 0 0.8em;
+            font-size: 0.8em;
+            border-radius: 0.4em;
+        }
+        .mode {
+            order: 1;
+            flex-basis: 22%;
+            padding-top: 0.5em;
+            align-items: flex-start;
+        }
+        .footer {
+            order: 2;
+            flex-basis: 56%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .blank {
+            order: 3;
+            flex-basis: 22%;
+        }
+        .mode > div {
+            flex-basis: 20%;
+            min-width: 4em;
+            max-width: 6em;
+            justify-content: space-around;
+        }
+        .list-order {
+            margin: 0.2em 0.6em;
+            padding: 0 1em;
+            line-height: 1.8em;
+            border-radius: 1em;
+            background-color: rgba(200,200,200,0.20);
+        }
+        .mode > div > button {
+            width: 2.2em;
+            height: 2.2em;
+        }
+        .controls {
+            order: 1;
+            width: 25em;
+            height: 3.5em;
+        }
+        .media, .list {width: 2.35em;height: 2.35em;}
+        .toggle {width: 3.5em;height: 3.5em;}
+        .last, .next {width: 3em;height: 3em;}
+
+        .progress {
+            order: 2;
+            width: 100%;
+            align-items: center;
+        }
+        .current-time {order: 1;}
+        progress {order: 2;}
+        .end-time {order: 3}
+        progress {
+            flex: 1 1 90%;
+            height: 0.56em;
+            border: 1px solid #877A79;
+            border-radius: 0.28em;
+        }
+        progress::-webkit-progress-bar {border-radius: 0.28em;}
+        progress::-webkit-progress-value {border-radius: 0.28em;}
+        progress::-moz-progress-bar {border-radius: 0.28em;}
+        .current-time, .end-time {
+            flex: 0 0 5%;
+            font-size: 10.2pt;
+            text-align: center;
+        }
+    }
+
+    @media all and (orientation: portrait) {
+        main {
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            max-width: 32.5rem;
+            flex-direction: column;
+        }
+        header {flex: none;}
+        footer {
+            padding-inline: 1.8em;
+            flex-basis: 28%;
+            max-height: 20em;
+            flex-direction: column;
+        }
+        .infor {padding-inline: 2em;}
+        .cover {
+            margin-bottom: 3.4%;
+            padding: 4.2% 4.6% 0;
+        }
+        .cover > div {margin: auto;}
+        section {flex: auto;}
+        h2 {
+            font-size: 1.15em;
+            line-height: 2em;
+            text-shadow: 0px 1px 3px #1E1E1E;
+        }
+        p {
+            line-height: 1.35em;
+            color: rgba(253,253,253,0.9);
+            text-shadow: 0px 1px 1px #4A4A4A;
+        }
+        .mv, .down {
+            margin-left: 0.5em;
+            padding: 0 0.8em;
+            font-size: 0.85em;
+            border-radius: 0.45em;
+        }
+        .blank {
+            height: 0;
+            display: none;
+        }
+        .mode, .mode > div {justify-content: space-between;}
+        .mode {
+            margin: 0.6em 0;
+            align-items: center;
+        }
+        .mode > div {flex-basis: 30%;}
+        .mode > div > button {
+            width: 2.6em;
+            height: 2.6em;
+        }
+        .list-order {
+            padding: 0 1em;
+            font-size: 0.86em;
+            line-height: 2.12em;
+            border-radius: 1em;
+            background-color: rgba(200,200,200,0.20);
+            text-shadow: 0px 1px 1px #4A4A4A;
+        }
+        .progress {
+            margin-bottom: 0.5em;
+            padding-left: 0.32em;
+            padding-right: 0.32em;
+            flex-wrap: wrap;
+            align-content: flex-end;
+        }
+        progress {
+            margin-bottom: 0.25em;
+            width: 100%;
+            height: 0.6em;
+            border: 0.035em solid #877A79;
+            border-radius: 0.48em;
+        }
+        progress::-webkit-progress-bar {border-radius: 0.42em;}
+        progress::-webkit-progress-value {border-radius: 0.42em;}
+        progress::-moz-progress-bar {border-radius: 0.42em;}
+        .current-time, .end-time {font-size: 0.9em;}
+        .controls {
+            margin-bottom: 1em;
+            height: 5em;
+        }
+        .media, .list {width: 2.6em;height: 2.6em;}
+        .toggle {width: 4.5em;height: 4.5em;}
+        .last, .next {width: 3.5em;height: 3.5em;}
+    }
+
+    progress::-webkit-progress-bar {
+        overflow: hidden;
+        background-color: #B8B8B8;
+    }
+    progress::-webkit-progress-value {
+        background-color: #ffffff;
+        -webkit-transition: width 0.12s linear 0s;
+        transition: width 0.12s linear 0s;
+        will-change: transform;
+    }
+    progress::-moz-progress-bar {
+        background-color: #ffffff;
+        transition: width 0.12s linear 0s;
+        will-change: transform;
+    }
+
+    .controls > button:active {filter: invert(85%);}
+
+    .cover > div, progress {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .hidden {visibility: hidden;}
+    .close {display: none;}
+}

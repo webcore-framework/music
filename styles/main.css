@@ -1,0 +1,33 @@
+@layer token {
+    html {
+        --landscape-footer-height: 5.5rem;
+        --portrait-footer-height: 4.7rem;
+    }
+}
+
+@layer page {
+    .container {
+        position: relative;
+    }
+    main {
+        display: flex;
+        position: absolute;
+        inset: 0;
+        overflow: auto;
+        scrollbar-width: thin;
+    }
+    router-view {
+        flex: 1 1 86.5%;
+        scrollbar-width: none;
+    }
+    @media all and (orientation: portrait){
+        body {
+            color: #ffffff;
+            background-color: #000000;
+        }
+    }
+    router-view::-webkit-scrollbar {display: none;}
+}
+@layer override {
+    .close {visibility: hidden;}
+}

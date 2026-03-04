@@ -1,0 +1,108 @@
+@layer view {
+    :host {display: block;}
+    .root::after {
+        content: '';
+        display: block;
+        height: 10em;
+        visibility: hidden;
+        user-select: none;
+    }
+    header {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+    main {
+        padding: 0.5em 0.25em;
+    }
+    ol {
+        margin-top: 0.5em;
+        margin-inline: auto;
+        list-style-position: inside;
+        list-style-type: none;
+    }
+    li:empty {visibility: hidden;}
+    img {
+        width: 100%;
+        display: block;
+        -webkit-aspect-ratio: 1 / 1;
+        aspect-ratio: 1 / 1;
+        border-radius: 1.6em;
+        background-image: url("http://chinbeker.qicp.vip:5152/img/music/album/10000.jpg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    p {
+        padding-left: 8%;
+        word-wrap: break-word;
+    }
+    p:first-of-type {
+        padding-top: 0.5em;
+        font-weight: bold;
+        word-break: keep-all;
+    }
+    p:last-of-type {
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+        word-break: break-all;
+    }
+    @media all and (orientation: landscape) {
+        header {
+            -webkit-aspect-ratio: 16 / 6;
+            aspect-ratio: 16 / 6;
+            max-height: 24em;
+        }
+        ol {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+        li {
+            flex: 1 1 12.5%;
+            min-width: 11rem;
+        }
+        li:not(:empty) {
+            padding: 0.9em 0.9em 0.6em;
+            border-radius: 6%;
+        }
+        img {
+            box-shadow: 0px 0px 6px #808080;
+        }
+        p {padding-right: 3%;}
+        p:last-of-type {
+            font-size: 0.88em;
+            color: #808080;
+        }
+    }
+    @media all and (orientation: portrait) {
+        :host {color: #E5E5E5;background-color: #000000;}
+        header {
+            -webkit-aspect-ratio: 16 / 9;
+            aspect-ratio: 16 / 9;
+            max-height: 26em;
+        }
+        ol {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(30%, 12rem), 1fr));
+            align-content: flex-start;
+            justify-content: center;
+        }
+        li:not(:empty) {
+            padding: 0.7em 0.392em;
+            border-radius: 1em;
+        }
+        p {padding-right: 1%;}
+        p:first-of-type {font-size: 0.8em;}
+        p:last-of-type {font-size: 0.72em;color: #b8b8b8;}
+    }
+    @media (hover: hover) and (pointer: fine) {
+        @media all and (orientation: landscape) {li:hover {background-color: #F0F0F0;}}
+        @media all and (orientation: portrait) {li:hover {background-color: #282828;}}
+    }
+    @media (hover: none) and (pointer: coarse) {
+        @media all and (orientation: landscape) {li:active {background-color: #F0F0F0;}}
+        @media all and (orientation: portrait) {li:active {background-color: #282828;}}
+    }
+    li {cursor: pointer;}
+}

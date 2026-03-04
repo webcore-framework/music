@@ -1,0 +1,78 @@
+@layer component {
+    :host {
+        position: fixed;
+        inset-inline: 0;
+        inset-block-end: 0;
+        width: 100%;
+        color: #ffffff;
+    }
+    .root {
+        display: flex;
+        height: 100%;
+    }
+    section {
+        flex: auto;
+        overflow: hidden;
+    }
+    .control {
+        flex: none;
+        display: flex;
+        column-gap: 0.4em;
+    }
+    .button {
+        height: 100%;
+    }
+    img, svg {
+        width: 100%;
+        height: 100%;
+        user-select: none;
+    }
+    .image, img, .button {border-radius: 5px;}
+    h2, p {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    @media all and (orientation: landscape) {
+        :host {
+            height: var(--landscape-footer-height);
+            padding: 0.7rem 1.5rem 0.7rem 2rem;
+            background-color: #75514A;
+        }
+        .image {
+            flex: 0 0 4.1em;
+            background-color: #553B36;
+        }
+        section {padding: 0.48em 0.5em 0 2em;}
+        h2 {font-size: 1.1em;line-height: 1.5em;}
+        p {font-size: 0.92em;line-height: 1.8em;color: #CBCBCB;}
+    }
+    @media all and (orientation: portrait) {
+        :host {
+            height: var(--portrait-footer-height);
+            padding: 0.6rem 0.8rem 0.6rem 1.1rem;
+            background-color: #1e1e1e;
+        }
+        .image {
+            width: 3.5rem;
+            height: 3.5rem;
+            flex: 0 0 3.5rem;
+            background-color: #121212;
+        }
+        section {padding: 0.28em 0.3em 0 0.9em;}
+        h2 {font-size: 0.95em;line-height: 1.8em;}
+        p {font-size: 0.82em;line-height: 1.4em;color: #CBCBCB;}
+        .button {width: 3.5rem;}
+    }
+    .image, img, .button {
+        -webkit-aspect-ratio: 1 / 1;
+        aspect-ratio: 1 / 1;
+    }
+    @media (hover: hover) and (pointer: fine) {
+        .image:hover, .button:hover {background-color: #2f2f2f;cursor: pointer;}
+    }
+    @media (hover: none) and (pointer: coarse) {
+        .image:active, .button:active {background-color: #2f2f2f;}
+    }
+    .image, .control, svg {-webkit-tap-highlight-color: transparent;}
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html class="app" lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Cache-Control" content="max-age=43200" />
+    <title>音乐</title>
+    <link rel="shortcut icon" type="image/x-icon" sizes="64x64" href="http://chinbeker.qicp.vip:5152/img/logo/music_64x64.ico" />
+    <link rel="icon" type="image/x-icon" sizes="64x64" href="http://chinbeker.qicp.vip:5152/img/logo/music_64x64.ico" />
+    <link rel="apple-touch-icon-precomposed" type="image/x-icon" sizes="180x180" href="http://chinbeker.qicp.vip:5152/img/logo/music_180x180.ico" />
+    <meta name="application-name" content="音乐" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="color-scheme" content="only light" />
+    <meta name="full-screen" content="yes" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="keywords" content="音乐,歌曲,播放器,华辰" />
+    <meta name="author" content="CHINBEKER" />
+    <link rel="stylesheet" type="text/css" href="http://chinbeker.qicp.vip:5152/webcore/webcore.css" charset="utf-8" />
+    <script type="application/javascript" src="http://chinbeker.qicp.vip:5152/webcore/webcore.all.js" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="/styles/main.css" charset="utf-8" />
+    <script type="module" src="/main.js" charset="utf-8"></script>
+</head>
+<body>
+<div class="container">
+    <main class="panel">
+        <app-sidbar></app-sidbar>
+        <router-view></router-view>
+    </main>
+    <app-player class="close"></app-player>
+    <app-video class="close"></app-video>
+    <app-lyrics class="close"></app-lyrics>
+    <app-playlist class="close"></app-playlist>
+    <app-footer></app-footer>
+</div>
+</body>
+</html>

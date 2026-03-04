@@ -1,0 +1,80 @@
+@layer component {
+    .root {
+        height: 100%;
+        overflow-y: auto;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+    }
+    @media all and (orientation: landscape){
+        :host {
+            flex-grow: 0;
+            flex-shrink: 1;
+            flex-basis: 13.5%;
+            min-width: 11rem;
+            background-color: #C5C5C5;
+        }
+    }
+    @media all and (orientation: portrait){
+        :host {
+            min-width: auto;
+            flex-basis: 0;
+            display: none;
+        }
+    }
+    h2 {
+        margin: 0;
+        padding-left: 0.5em;
+        font-size: 2em;
+        font-weight: normal;
+        line-height: 3em;
+        user-select: none;
+    }
+    a {
+        padding: 0.2em 1em;
+        display: block;
+        width: 100%;
+        text-decoration: none;
+        color: #000000;
+    }
+    i {
+        position: relative;
+        display: inline-block;
+        width: 2em;
+        height: 2em;
+        font-style: normal;
+        vertical-align: middle;
+    }
+    i::before {
+        content: '';
+        margin: 15%;
+        display: inline-block;
+        width: 70%;
+        height: 70%;
+        border-radius: 50%;
+        background-color: #ffffff;
+    }
+    i > span {
+        position: absolute;
+        top: 0%;
+        left: 0;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        -webkit-user-drag: none;
+    }
+    a > span {
+        margin-left: 0.8em;
+        font-size: 13pt;
+        line-height: 2.2em;
+        vertical-align: middle;
+    }
+
+    li:hover, li:active {background-color: #ABADAC;}
+    .style {background-image: url("http://chinbeker.qicp.vip:5152/img/music/icon/catalog.svg");}
+    .artist {background-image: url("http://chinbeker.qicp.vip:5152/img/music/icon/artist.svg");}
+    .album {background-image: url("http://chinbeker.qicp.vip:5152/img/music/icon/album.svg");}
+    .like {background-image: url("http://chinbeker.qicp.vip:5152/img/music/icon/like.svg");}
+    .collect {background-image: url("http://chinbeker.qicp.vip:5152/img/music/icon/collect.svg");}
+    .sheet {background-image: url("http://chinbeker.qicp.vip:5152/img/music/icon/class.svg");}
+}

@@ -1,0 +1,69 @@
+@layer component {
+    :host {
+        position: absolute;
+        display: block;
+        height: 100%;
+    }
+    .root {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .body {
+        flex: auto;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        will-change: scroll-position;
+    }
+    .body > div {
+        padding: 0 1em;
+        text-align: center;
+        word-spacing: 0.2em;
+        white-space: pre-wrap;
+        word-break: keep-all;
+    }
+    .body > div > p {
+        margin-block: 0.65em;
+        line-height: 1.08em;
+    }
+    .body > div > p:empty {min-height: 1.7em;}
+
+    @media all and (orientation: landscape) {
+        :host {
+            inset-block-start: 0;
+            inset-inline-end: 0;
+            width: 50%;
+            height: calc(100% - var(--landscape-footer-height))
+        }
+        .head {height: 1em;}
+        .body > div {
+            margin-top: 45vh;
+            margin-bottom: 48vh;
+            color: rgba(255,255,255,0.70);
+        }
+        p.play {
+            font-size: 12pt;
+            color: #E8FF00;
+        }
+    }
+    @media all and (orientation: portrait) {
+        :host {
+            inset: 0;
+            color: #ffffff;
+            background-color: rgba(0,0,0,0.93);
+        }
+        .head {height: 1.5em;}
+        .body > div {
+            margin-top: 45vh;
+            margin-bottom: 52vh;
+            font-size: 0.88em;
+            color: rgba(255,255,255,0.5);
+        }
+        p.play {
+            font-size: 1.05em;
+            color: #ffffff;
+        }
+    }
+    .body::-webkit-scrollbar {display: none;}
+}

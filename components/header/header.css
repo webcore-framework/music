@@ -1,0 +1,108 @@
+@layer component {
+    :host {
+        display: block;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+    header > div:first-child {padding: 0.6rem 0.8rem;}
+    button {
+        padding-left: 0.35rem;
+        padding-right: 1.1rem;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        border-radius : 2em;
+        border: 1px solid rgb(167,167,167);
+    }
+    span {
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    i {
+        display: inline-block;
+        width: 1.8rem;
+        height: 2.2rem;
+        font-style: normal;
+        vertical-align: middle;
+        background-image: url('http://chinbeker.qicp.vip:5152/img/music/button/4.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+    }
+    .back {
+        font-weight: bold;
+        line-height: 1em;
+        vertical-align: middle;
+        word-break: keep-all;
+    }
+    header > div:last-child {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .icon {
+        width: 2.5em;
+        height: 2.5em;
+        aspect-ratio: 1 / 1;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    .title {
+        margin-left: 0.8em;
+        vertical-align: middle;
+    }
+    @media all and (orientation: landscape) {
+        .root {background-color: white;}
+        header {border-bottom: 1px solid #E0E0E0;}
+        header > div:first-child {display: none;}
+        button {
+            color: #000;
+            background-color: #ffffff;
+        }
+        i {filter: invert(100%);}
+        .back {font-size: 1.3em;}
+        header > div:last-child {padding: 0.3rem 0.65rem;}
+        .title {font-size: 1.5em;}
+    }
+    @media all and (orientation: portrait) {
+        .root {
+            color: white;
+            background-color: #000000;
+        }
+        header {
+            border-bottom: 1px solid #373737;
+        }
+        button {
+            color: white;
+            background-color: #000000;
+        }
+        .back {font-size: 1.32em;}
+        header > div:last-child {
+            padding-inline: 0.8rem;
+            padding-bottom: 0.5em;
+        }
+        .title {font-size: 1.2em;}
+    }
+    @media (hover: hover) and (pointer: fine) {
+        @media all and (orientation: landscape) {
+            button:hover {background-color: #d6d6d6;}
+        }
+        @media all and (orientation: portrait) {
+            button:hover {background-color: #2F2F2F;}
+        }
+    }
+    @media (hover: none) and (pointer: coarse) {
+        @media all and (orientation: landscape) {
+            button:active {background-color: #d6d6d6;}
+        }
+        @media all and (orientation: portrait) {
+            button:active {background-color: #2F2F2F;}
+        }
+    }
+}
